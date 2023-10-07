@@ -1,0 +1,14 @@
+import matplotlib
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("la_crime_200_recs.csv")
+crime_counts_by_district = df['area_name'].value_counts()
+sorted_districts = crime_counts_by_district.sort_values()
+districts = sorted_districts.index
+crime_counts = sorted_districts.values
+plt.barh(districts, crime_counts, color='pink')
+plt.xlabel('количество преступлений')
+plt.ylabel('районы')
+plt.title('количество преступлений в различных районах')
+plt.show()
