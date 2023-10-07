@@ -1,0 +1,11 @@
+import pandas as pd
+import numpy as np
+import csv
+
+df = pd.read_csv("la_crime_200_recs.csv")
+print(len(df[df['victim_sex']=='M']))
+print(len(df[df['victim_sex']=='F']))
+if (len(df[df['victim_sex']=='M'])) < (len(df[df['victim_sex']=='F'])):
+    print(True)
+else:
+    print(False)
